@@ -1,6 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
-
+#include <string.h>
 /**
  * _strchr - locates a character in a string
  * @s: string to be searched
@@ -9,16 +9,16 @@
  */
 char *_strchr(char *s, char c)
 {
-	char *ptr;
+	char x;
 
-	ptr = s;
-	while (*ptr != '\0')
+	while(1) 
 	{
-		if (*ptr == c)
+		x = *s;
+		if( x == c)
 		{
-			return ptr;
+			return s;
 		}
-		ptr++;
+		s++;
 	}
-	return NULL;
+	return (NULL);
 }
