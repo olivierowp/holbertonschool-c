@@ -17,7 +17,7 @@ char *_strstr(char *haystack, char *needle)
 	}
 
 	y = needle;
-	for ( ; *haystack != 0; haystack++)
+	for (; *haystack != 0; haystack++)
 	{
 		if (*haystack != *y)
 		{
