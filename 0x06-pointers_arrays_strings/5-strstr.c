@@ -11,6 +11,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	char *x;
 	char *y;
+
 	if (!*needle)
 	{
 		return (haystack);
@@ -41,6 +42,5 @@ char *_strstr(char *haystack, char *needle)
 		y = needle;
 		haystack++;
 	}
-
 	return (NULL);
 }
