@@ -3,3 +3,4 @@
 Ce dépôt contient:
 * 0x00. C - Hello, World
 * 0x03. C - Debugging
+* 0x06. C - Even more pointers, arrays and strings
