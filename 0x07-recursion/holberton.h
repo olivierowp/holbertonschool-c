@@ -13,5 +13,6 @@ int _is_prime(int n, int i);
 int is_prime_number(int n);
 int _palindrome(char *str, int s, int e);
 int is_palindrome(char *s);
+int wildcmp(char *s1, char *s2);
 
 #endif /* HOLBERTON_H */
