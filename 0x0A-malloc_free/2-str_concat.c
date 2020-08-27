@@ -25,24 +25,24 @@ int _strlen(char *s)
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *empty = "";
+
 	int s1len, s2len;
 	int i, j;
 	char *result;
 
 	if (s1 == NULL)
 	{
-		return (empty);
+		s1 = "";
 	}
 	if (s2 == NULL)
 	{
-		return (empty);
+		s2 = "";
 	}
 
 	s1len = _strlen(s1);
 	s2len = _strlen(s2);
 
-	result = malloc(sizeof(char) * (s1len + s2len + 1));
+	result = malloc(sizeof(char) * (s1len + s2len) + 1);
 	if (result == NULL)
 	{
 		return (NULL);
@@ -53,10 +53,10 @@ char *str_concat(char *s1, char *s2)
 		result[i] = s1[i];
 	}
 
-	for (j = 0; j < s2len; j++, i++)
+	for (j = 0; j <= s2len; j++, i++)
 	{
 		result[i] = s2[j];
 	}
-	result[i] = '\0';
+	result[i] = 0;
 	return (result);
 }
