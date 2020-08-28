@@ -79,9 +79,7 @@ char **strtow(char *str)
 
 	wordCount = countWords(str);
 	if (str == NULL || *str == '\0' || wordCount <= 0)
-	{
 		return (NULL);
-	}
 	grid = malloc(sizeof(char *) * (wordCount + 1));
 	if (grid == NULL)
 		return (NULL);
@@ -90,10 +88,7 @@ char **strtow(char *str)
 	while (*str != '\0')
 	{
 		if (find)
-		{
 			length++;
-		}
-
 		if (*str != ' ' && !find)
 		{
 			find = 1;
@@ -104,12 +99,16 @@ char **strtow(char *str)
 			find = 0;
 			end = str;
 			word = copyWord(start, end, length);
-			if (word == NULL)
-				return (NULL);
 			grid[index] = word;
 			index++;
 		}
 		str++;
+	}
+	if (find)
+	{
+		end = str;
+		grid[index] = copyWord(start, end, length);
+		index++;
 	}
 	grid[index] = NULL;
 	return (grid);
