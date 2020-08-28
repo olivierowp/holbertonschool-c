@@ -91,5 +91,6 @@ char **strtow(char *str)
 		}
 		str++;
 	}
+	grid[index] = NULL;
 	return (grid);
 }
