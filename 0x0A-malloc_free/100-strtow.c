@@ -2,6 +2,12 @@
 #include <stdio.h>
 #include "holberton.h"
 
+/**
+ * countWords - counts numbers of words in string
+ * @str: input string
+ * Return: number of words
+ */
+
 int countWords(char *str)
 {
 	int count;
@@ -58,7 +64,7 @@ char **strtow(char *str)
 {
 	int wordCount, find, length, index;
 	char **grid;
-	char *start, *end;
+	char *start, *end, *word;
 
 	if (str == NULL || *str == '\0')
 	{
@@ -66,10 +72,8 @@ char **strtow(char *str)
 	}
 	wordCount = countWords(str);
 	grid = malloc(sizeof(char *) * (wordCount + 1));
-
 	start = end = NULL;
 	find = index = length = 0;
-
 	while (*str != '\0')
 	{
 		if (find)
@@ -86,7 +90,12 @@ char **strtow(char *str)
 		{
 			find = 0;
 			end = str;
-			grid[index] = copyWord(start, end, length);
+			word = copyWord(start, end, length);
+			if (word == NULL)
+			{
+				return (NULL);
+			}
+			grid[index] = word;
 			index++;
 		}
 		str++;
