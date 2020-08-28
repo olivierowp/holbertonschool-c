@@ -13,6 +13,11 @@ int countWords(char *str)
 	int count;
 	int find;
 
+	if (str == NULL)
+	{
+		return (0);
+	}
+
 	count = 0;
 	find = 0;
 	while (*str != '\0')
@@ -45,6 +50,11 @@ char *copyWord(char *start, char *end, int size)
 
 	word = malloc(sizeof(char) * (size + 1));
 
+	if (word == NULL)
+	{
+		return (NULL);
+	}
+
 	i = 0;
 	while (start < end)
 	{
@@ -67,12 +77,14 @@ char **strtow(char *str)
 	char **grid;
 	char *start, *end, *word;
 
-	if (str == NULL || *str == '\0')
+	wordCount = countWords(str);
+	if (str == NULL || *str == '\0' || wordCount <= 0)
 	{
 		return (NULL);
 	}
-	wordCount = countWords(str);
 	grid = malloc(sizeof(char *) * (wordCount + 1));
+	if (grid == NULL)
+		return (NULL);
 	start = end = NULL;
 	find = index = length = 0;
 	while (*str != '\0')
@@ -93,9 +105,7 @@ char **strtow(char *str)
 			end = str;
 			word = copyWord(start, end, length);
 			if (word == NULL)
-			{
 				return (NULL);
-			}
 			grid[index] = word;
 			index++;
 		}
