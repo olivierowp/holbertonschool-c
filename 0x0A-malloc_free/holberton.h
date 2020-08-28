@@ -9,5 +9,8 @@ char *_strdup(char *str);
 int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
+int countWords(char *str);
+char *copyWord(char *start, char *end, int size);
+char **strtow(char *str);
 
 #endif /* HOLBERTON_H */
