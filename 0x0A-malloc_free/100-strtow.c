@@ -52,6 +52,7 @@ char *copyWord(char *start, char *end, int size)
 		i++;
 		start++;
 	}
+	word[i] = '\0';
 	return (word);
 }
 
