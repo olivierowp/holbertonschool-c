@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "dog.h"
 
 /**
@@ -36,7 +38,6 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 	return (ptr);
 }
 
-
 /**
  * _strdup - returns a pointer to a newly allocated space in memory,
  * which contains a copy of the string given as a parameter.
@@ -54,7 +55,7 @@ char *_strdup(char *str)
 	if (new == NULL)
 		return (NULL);
 
-	return _memcpy(new, str, len);
+	return (_memcpy(new, str, len));
 }
 
 /**
@@ -64,9 +65,10 @@ char *_strdup(char *str)
  * @owner: owner of dog
  * Return: malloced dog_t OR NULL
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	char *n, *o;
+
 	if (name == NULL || owner == NULL)
 		return (NULL);
 
@@ -75,20 +77,23 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (new_dog == NULL)
 		return (NULL);
 
-	new_dog->name = _strdup(name);
-	if (new_dog->name == NULL)		
+	n = malloc(_strlen(name) + 1);
+	if (n == NULL)
 	{
 		free(new_dog);
 		return (NULL);
 	}
+	n = _strdup(name);
+	new_dog->name = n;
 
-	new_dog->owner = _strdup(owner);
-	if (new_dog->owner == NULL)
+	o = malloc(_strlen(owner) + 1);
+	if (o == NULL)
 	{
 		free(new_dog->name);
 		free(new_dog);
 		return (NULL);
 	}
+	new_dog->owner = o;
 	new_dog->age = age;
 	return (new_dog);
 }
