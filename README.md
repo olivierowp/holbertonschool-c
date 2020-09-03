@@ -11,3 +11,4 @@ Ce dépôt contient:
 * 0x0B. C - More malloc, free
 * 0x0C. C - Preprocessor
 * 0x0D. C - Structures, typedef
+* 0x0E. C - Function pointers
