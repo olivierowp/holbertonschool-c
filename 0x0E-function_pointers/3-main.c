@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
 
 /**
@@ -15,7 +13,8 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		return (98);
+		puts("Error");
+		exit(98);
 	}
 
 	a = atoi(argv[1]);
@@ -24,7 +23,7 @@ int main(int argc, char *argv[])
 	calcul = get_op_func(argv[2]);
 	if (calcul == NULL)
 	{
-		printf("Error!\n");
+		puts("Error");
 		exit(99);
 	}
 	result = calcul(a, b);
