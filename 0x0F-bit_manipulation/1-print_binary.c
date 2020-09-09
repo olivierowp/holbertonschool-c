@@ -3,8 +3,7 @@
 /**
  * print_binary - prints the binary
  * @n: unsigned long int is n that count
- * 
- * void
+ * Return:
  */
 void print_binary(unsigned long int n)
 {
