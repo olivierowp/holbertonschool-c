@@ -14,7 +14,7 @@ int main(void)
 	int port;
 	struct sockaddr_in addr;
 
-	sock = socket(AF_INET, SOCK_STREAM, 0);
+	sock = socket(PF_INET, SOCK_STREAM, 0);
 	if (sock == -1)
 		return (EXIT_FAILURE);
 
@@ -23,7 +23,7 @@ int main(void)
 	addr.sin_addr.s_addr = INADDR_ANY;
 	addr.sin_port = htons(port);
 
-if (bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0)
+	if (bind(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0)
 		return (EXIT_FAILURE);
 
 	listen(sock, 3);
