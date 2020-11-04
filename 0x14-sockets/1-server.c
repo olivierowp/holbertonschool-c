@@ -17,7 +17,7 @@ int main(void)
 	int port;
 	struct sockaddr_in addr, client;
 
-	sock = socket(PF_INET, SOCK_STREAM, 0);
+	sock = socket(AF_INET, SOCK_STREAM, 0);
 	if (sock == -1)
 		return (EXIT_FAILURE);
 
