@@ -14,3 +14,4 @@ Ce dépôt contient:
 * 0x0E. C - Function pointers
 * 0x10. C - File I/O
 * 0x11. C - Makefiles
+* 0x14. Sockets
